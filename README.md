@@ -7,13 +7,12 @@ This project advances the utxo-live project by visualizing the difference betwee
 <br>
 
 <img src="https://utxo.live/utxo_diff_678336_to_680188.png" alt="Logo" >
-<em>Figure description: The heatmap is a two dimensional histogram showing the output date (x-axis), BTC amount (y-axis), and number of unspent outputs (color map) in each histogram bin. The bin size of the histogram is 200 (yaxis) by 400 (xaxis). Zooming in to the image usually reveals more detail. A daily updating version of this image is running at <a href=https://utxo.live/changes/yesterday.php/>utxo.live</a>.</em>
+<em>Figure description: The heatmap shows all coins spent between blocks 678336 and 680188. It is a two dimensional histogram showing the output date (x-axis), BTC amount (y-axis), and number of unspent outputs (color map) in each histogram bin. The bin size of the histogram is 200 (yaxis) by 400 (xaxis). Zooming in to the image usually reveals more detail. A daily updating version of this image is running at <a href=https://utxo.live/changes/yesterday.php/>utxo.live</a>.</em>
 
 
 ## Privacy & Security
 
-With the new `dumptxouset` command, the python script no longer requires an RPC password to access Core's databases. The script simply reads the dump files without interacting with Core at all. No private keys, passwords, xpubs, or wallet addresses are exchanged between Core and the python script.
-
+Because the user uses the `dumptxouset` command, the python script does not require any interaction with Bitcoin Core. The script simply reads the dump files after they're completed. No private keys, passwords, xpubs, or wallet addresses are exchanged between Core and the python script.
 
 <!-- Requirements -->
 ## Requirements
