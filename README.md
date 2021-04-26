@@ -12,7 +12,7 @@ This project advances the <a href='https://github.com/Unbesteveable/utxo-live'>u
 
 ## Privacy & Security
 
-Because the user executes the `dumptxouset` command inside Bitcoin Core, the python script does not interact with Core directly. The script simply reads the dump files after they're completed. No private keys, passwords, xpubs, or wallet addresses are exchanged between Core and the python script.
+Because the user executes the `dumptxoutset` command inside Bitcoin Core, the python script does not interact with Core directly. The script simply reads the dump files after they're completed. No private keys, passwords, xpubs, or wallet addresses are exchanged between Core and the python script.
 
 <!-- Requirements -->
 ## Requirements
