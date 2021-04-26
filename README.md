@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-This project advances the <a href='https://github.com/Unbesteveable/utxo-live'>utxo-live</a> project by visualizing the difference between two states of the Bitcoin blockchain. A new feature in Bitcoin Core 0.20 allows users to dump the state of the blockchain (the UTXO set) using the command `dumptxoutset`. While the previous project <a href='https://github.com/Unbesteveable/utxo-live'>utxo-live</a> visualizes the indivdiual UTXO sets, this project visualizes the differences (the coins spent) between the two states of the chain.
+This project advances the <a href='https://github.com/Unbesteveable/utxo-live'>utxo-live</a> project by visualizing the differences between two states of the Bitcoin blockchain. A new feature in Bitcoin Core 0.20 allows users to dump the state of the blockchain (the UTXO set) using the command `dumptxoutset`. While the previous project <a href='https://github.com/Unbesteveable/utxo-live'>utxo-live</a> visualizes the indivdiual UTXO sets, this project visualizes the differences (the coins spent) between the two states of the chain.
  
 <br>
 
