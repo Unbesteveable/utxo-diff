@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-This project advances the utxo-live project by visualizing the difference between two states of the Bitcoin blockchain. A new feature in Bitcoin Core 0.20 allows users to dump the state of the blockchain (the UTXO set) using the command `dumptxoutset`. While the previous project <a href='https://github.com/Unbesteveable/utxo-live'>utxo-live</a> visualized the indivdiual UTXO sets, this project visualizes the differences (the coins spent) between the two states of the chain.
+This project advances the <a href='https://github.com/Unbesteveable/utxo-live'>utxo-live</a> project by visualizing the difference between two states of the Bitcoin blockchain. A new feature in Bitcoin Core 0.20 allows users to dump the state of the blockchain (the UTXO set) using the command `dumptxoutset`. While the previous project <a href='https://github.com/Unbesteveable/utxo-live'>utxo-live</a> visualizes the indivdiual UTXO sets, this project visualizes the differences (the coins spent) between the two states of the chain.
  
 <br>
 
@@ -12,7 +12,7 @@ This project advances the utxo-live project by visualizing the difference betwee
 
 ## Privacy & Security
 
-Because the user uses the `dumptxouset` command, the python script does not interact with Bitcoin Core. The script simply reads the dump files after they're completed. No private keys, passwords, xpubs, or wallet addresses are exchanged between Core and the python script.
+Because the user executes the `dumptxouset` command inside Bitcoin Core, the python script does not interact with Core directly. The script simply reads the dump files after they're completed. No private keys, passwords, xpubs, or wallet addresses are exchanged between Core and the python script.
 
 <!-- Requirements -->
 ## Requirements
@@ -26,7 +26,7 @@ Because the user uses the `dumptxouset` command, the python script does not inte
    (Note: `bitcoin-cli` doesn't ship with Core on Mac OS, use Window->Console instead)
 * Wait until a later block height, and dump the second utxo set by repeating the step above at a larger block number
 * Install two python dependencies `python3 -m pip install numpy matplotlib` 
-* Download <a href='https://github.com/Unbesteveable/utxo-live/raw/main/utxo-live.py'>utxo-live.py<a> to your `utxo-live` folder and run it `python3 utxo-live.py` (20 min)
+* Download <a href='https://github.com/Unbesteveable/utxo-diff/raw/main/utxo-diff.py'>utxo-diff.py<a> to your `utxo-live` folder and run it `python3 utxo-diff.py` (20 min)
 
 ## Step by step instructions
 1. Make sure Bitcoin Core (version 0.20 or higher) is running and synchronized.
@@ -68,7 +68,7 @@ Because the user uses the `dumptxouset` command, the python script does not inte
 <img src="https://utxo.live/getblockcount.png">
  
 
-8. Dump the current utxo set by typing in the console window:
+8. Dump the first utxo set by typing in the console window:
 
 ```sh
   dumptxoutset <PATH to utxo-live>/<xxxxxx.dat>
@@ -82,7 +82,7 @@ Because the user uses the `dumptxouset` command, the python script does not inte
 
 9. While the utxo file is dumping, download `utxo-live.py` and install two python dependencies. To do this:
  
- * Right click on <a href='https://github.com/Unbesteveable/utxo-live/raw/main/utxo-live.py'>utxo-live.py<a>, choose "Save Link As" and select the `utxo-live` folder.
+ * Right click on <a href='https://github.com/Unbesteveable/utxo-diff/raw/main/utxo-diff.py'>utxo-diff.py<a>, choose "Save Link As" and select the `utxo-live` folder.
 
  * In the terminal window (not the Bitcoin console), type the following command to install two python dependencies:
 ```sh
@@ -98,18 +98,15 @@ Because the user uses the `dumptxouset` command, the python script does not inte
 
 <img src="https://utxo.live/dump_output2.png">
 
-11. If the dump file is finished and Step 9 is completed (<a href='https://github.com/Unbesteveable/utxo-live/raw/main/utxo-live.py'>utxo-live.py<a> is downloaded and python dependencies were installed), then run <a href='https://github.com/Unbesteveable/utxo-live/raw/main/utxo-live.py'>utxo-live.py<a> by typing in the terminal:
+11. Decide how long you'd like to wait between block heights, and repeat steps 7-8 at the later height. The minimum height difference is one block. I have yet to find any maximum height difference. 
+
+11. If both utxo sets have finished dumping and Step 9 is also completed (<a href='https://github.com/Unbesteveable/utxo-diff/raw/main/utxo-diff.py'>utxo-diff.py<a> is downloaded and python dependencies were installed), then run <a href='https://github.com/Unbesteveable/utxo-diff/raw/main/utxo-diff.py'>utxo-diff.py<a> by typing in the terminal:
 
 ```sh
-  python3 utxo-live.py
+  python3 utxo-diff.py
   ```
 
-12. The program will take 20-30 minutes to complete and it will update you on the progress. If there are multiple xxxxxxx.dat files in the folder, it will ask you which one you'd like to process. When finished the image is stored in the folder as `utxo_heatmap_xxxxxx.png`.
+12. The program will take 30-40 minutes to complete and it will update you on the progress. If there several xxxxxxx.dat files in the folder, it will ask you which two you'd like to process. When finished the image is stored in the folder as `utxo_diff_xxxxxx_to_yyyyyy.png`, where `xxxxxx` and `yyyyyy` are the two block heights.
 
-
-## Acknowledgements
-
-I'm indebted to three main projects for the code, understanding, and inspiration for this project. The python functions that parse and decode the utxo dump file were adapted from <a href='https://github.com/sr-gi/bitcoin_tools'>Bitcoin_Tools<a>. I learned how Core serializes utxos from <a href='https://github.com/in3rsha/bitcoin-utxo-dump'> Bitcoin-UTXO-Dump <a>. An inspiring project that visualizes changes in the UTXO set as a movie is <a href='https://github.com/martinus/BitcoinUtxoVisualizer'> BitcoinUtxoVisualizer <a>.
- 
  
  
