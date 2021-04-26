@@ -2,17 +2,17 @@
 
 ## Project Overview
 
-This project advances the utxo-live project by visualizing the difference between two states of the Bitcoin blockchain. A new feature in Bitcoin Core 0.20 allows users to dump the state of the blockchain (the UTXO set) using the command `dumptxoutset`. While the previous project utxo-live visualized the indivdiual UTXO sets, this project visualizes the differences (the coins spent) between the two states of the chain.
+This project advances the utxo-live project by visualizing the difference between two states of the Bitcoin blockchain. A new feature in Bitcoin Core 0.20 allows users to dump the state of the blockchain (the UTXO set) using the command `dumptxoutset`. While the previous project <a href='https://github.com/Unbesteveable/utxo-live'>utxo-live</a> visualized the indivdiual UTXO sets, this project visualizes the differences (the coins spent) between the two states of the chain.
  
 <br>
 
 <img src="https://utxo.live/utxo_diff_678336_to_680188.png" alt="Logo" >
-<em>Figure description: The heatmap shows all coins spent between blocks 678336 and 680188. It is a two dimensional histogram showing the output date (x-axis), BTC amount (y-axis), and number of unspent outputs (color map) in each histogram bin. The bin size of the histogram is 200 (yaxis) by 400 (xaxis). Zooming in to the image usually reveals more detail. A daily updating version of this image is running at <a href=https://utxo.live/changes/yesterday.php/>utxo.live</a>.</em>
+<em>Figure description: The image above displays all coins spent between blocks 678336 and 680188 of the Bitcoin blockchain. The heatmap is a two dimensional histogram showing the output date (x-axis), BTC amount (y-axis), and number of coins spent (color map) in each histogram bin. The bin size of the histogram is 200 (yaxis) by 400 (xaxis). Zooming in to the image usually reveals more detail. A daily updating version of this image is running at <a href=https://utxo.live/changes/yesterday.php/>utxo.live</a>.</em>
 
 
 ## Privacy & Security
 
-Because the user uses the `dumptxouset` command, the python script does not require any interaction with Bitcoin Core. The script simply reads the dump files after they're completed. No private keys, passwords, xpubs, or wallet addresses are exchanged between Core and the python script.
+Because the user uses the `dumptxouset` command, the python script does not interact with Bitcoin Core. The script simply reads the dump files after they're completed. No private keys, passwords, xpubs, or wallet addresses are exchanged between Core and the python script.
 
 <!-- Requirements -->
 ## Requirements
@@ -22,9 +22,9 @@ Because the user uses the `dumptxouset` command, the python script does not requ
 
 ## Instructions for experienced users
 * Create a folder called `utxo-live` in a familiar location
-* Dump the utxo set `bitcoin-cli dumptxoutset <path to utxo-live>/xxxxxx.dat` where xxxxxxx is the current block height (5 min)
+* Dump the first utxo set `bitcoin-cli dumptxoutset <path to utxo-live>/xxxxxx.dat` where xxxxxxx is the current block height (5 min)
    (Note: `bitcoin-cli` doesn't ship with Core on Mac OS, use Window->Console instead)
-* Wait until a later block height, and repeat the step above using the larger block number
+* Wait until a later block height, and dump the second utxo set by repeating the step above at a larger block number
 * Install two python dependencies `python3 -m pip install numpy matplotlib` 
 * Download <a href='https://github.com/Unbesteveable/utxo-live/raw/main/utxo-live.py'>utxo-live.py<a> to your `utxo-live` folder and run it `python3 utxo-live.py` (20 min)
 
