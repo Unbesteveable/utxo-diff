@@ -80,7 +80,7 @@ Because the user executes the `dumptxoutset` command inside Bitcoin Core, the py
   ```
   If there are no error messages after hitting enter, then it's working. It will take 10-20 minutes. Look in your `utxo-live` folder and you should see the file being created as `xxxxxx.dat.incomplete`.
 
-9. While the utxo file is dumping, download `utxo-live.py` and install two python dependencies. To do this:
+9. While the utxo file is dumping, download <a href='https://github.com/Unbesteveable/utxo-diff/raw/main/utxo-diff.py'>utxo-diff.py<a> and install two python dependencies. To do this:
  
  * Right click on <a href='https://github.com/Unbesteveable/utxo-diff/raw/main/utxo-diff.py'>utxo-diff.py<a>, choose "Save Link As" and select the `utxo-live` folder.
 
@@ -106,7 +106,7 @@ Because the user executes the `dumptxoutset` command inside Bitcoin Core, the py
   python3 utxo-diff.py
   ```
 
-12. The program will take 30-40 minutes to complete and it will update you on the progress. If there several xxxxxxx.dat files in the folder, it will ask you which two you'd like to process. When finished the image is stored in the folder as `utxo_diff_xxxxxx_to_yyyyyy.png`, where `xxxxxx` and `yyyyyy` are the two block heights.
+13. The program will take 30-40 minutes to complete and it will update you on the progress. If there several xxxxxxx.dat files in the folder, it will ask you which two you'd like to process. When finished the image is stored in the folder as `utxo_diff_xxxxxx_to_yyyyyy.png`, where `xxxxxx` and `yyyyyy` are the two block heights.
 
  
  
